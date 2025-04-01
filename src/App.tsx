@@ -6,7 +6,9 @@ import { useSpeechRecognition } from './hooks/useSpeechRecognition';
 import type { Message, ChatState } from './types';
 
 // Initialize Gemini AI
-const genAI = new GoogleGenerativeAI('AIzaSyDscy7dVxSHuGcL93TLs_JUZTPagBmCHYg'); // Replace with actual API key
+
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
+
 const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
 // Voice Cache
